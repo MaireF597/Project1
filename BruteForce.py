@@ -1,15 +1,32 @@
-from itertools import combinations_with_replacement
+from itertools import permutations 
 
-password = "12"
-charList = "12"
-passLength = 2
+password = "166452"
+charListStr = "0123456789"
+charList = list(charListStr)
+passLength = 6
+passCrackBrute = ""
 
-passCombinations = (list(combinations_with_replacement(charList, passLength)))
 
-print(passCombinations[0])
+passCombinations = (list(permutations(charList, passLength))) #list created and each value inside - ('1', '1') are tuples
 
-combLen = len(passCombinations)
-count = 0
-#while (count < combLen):
+
+def convertTuple(tup):
+    str = ""
+    for item in tup:
+        str = str+item
+    return str
+
+for x in passCombinations:
+    #print(x)
+    str = convertTuple(x)
+    if str==password:
+        passCrackBrute = str
+        print(passCrackBrute)
+if passCrackBrute == "":
+    print("password not found")
+
+
+
+
 
 
