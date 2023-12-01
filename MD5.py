@@ -16,7 +16,7 @@ with open('commonpasswords.txt', 'r') as f:
             crackedPassMD5 = line
 
 print("The password the user entered: " + password)
-print ("The password as a hash: " + passMD5)
+print ("The password as an MD5 hash: " + passMD5)
 if crackedPassMD5 == "":
     crackedPassMD5 = "Password not found"
 
