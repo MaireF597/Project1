@@ -4,7 +4,7 @@ crackedPassDict = ""
 with open('commonpasswords.txt', 'r') as f:
     for line in f:
         line = line.strip()
-        # data = f.readline()
+       
 
         if line == password:
             crackedPassDict = line
