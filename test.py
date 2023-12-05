@@ -28,3 +28,6 @@ e, h, l = colors
 print(e,l,h)
 
 #parse arg to take arguments when we get there
+
+
+#csa big O
