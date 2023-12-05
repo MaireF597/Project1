@@ -26,3 +26,58 @@ if __name__ == "__main__":
       bruteForce(2)
 
 
+
+
+
+from itertools import permutations 
+
+password = "166452"
+charListStr = "0123456789"
+charList = list(charListStr)
+passLength = 6
+passCrackBrute = ""
+
+
+passCombinations = (list(permutations(charList, passLength))) #list created and each value inside - ('1', '1') are tuples
+
+
+def convertTuple(tup):
+    str = ""
+    for item in tup:
+        str = str+item
+    return str
+
+for x in passCombinations:
+    #print(x)
+    str = convertTuple(x)
+    if str==password:
+        passCrackBrute = str
+        print(passCrackBrute)
+if passCrackBrute == "":
+    print("password not found")
+
+
+
+
+
+
+
+
+
+password = "abc"
+str = "abcdefghijklmnopqrstuvwxyz"
+strLen = len(str)
+output = ""
+passLength = len(password)
+
+def loopy():
+    c=1
+    for strLen in str:
+        output = ""
+        output = output+strLen
+        if c<passLength:
+            c=c+1
+            loopy()
+        
+
+loopy()

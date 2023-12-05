@@ -1,14 +1,8 @@
-from itertools import permutations 
 
-password = "166452"
-charListStr = "0123456789"
-charList = list(charListStr)
-passLength = 6
-passCrackBrute = ""
+import itertools
+alphabet = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
 
-
-passCombinations = (list(permutations(charList, passLength))) #list created and each value inside - ('1', '1') are tuples
-
+passwordOG = "alicia"
 
 def convertTuple(tup):
     str = ""
@@ -16,17 +10,15 @@ def convertTuple(tup):
         str = str+item
     return str
 
-for x in passCombinations:
-    #print(x)
-    str = convertTuple(x)
-    if str==password:
-        passCrackBrute = str
-        print(passCrackBrute)
-if passCrackBrute == "":
-    print("password not found")
+for c in itertools.product(alphabet, repeat=len(passwordOG)):
+    # Add the three letters to the first half of the password.
+    password = c
+    # Try to extract the file.
+    print("Trying: "+ str( convertTuple(password)))
+    # If the file was extracted, you found the right password.
+    if passwordOG == convertTuple(password):
+        output = convertTuple(password)
+        break
+        
 
-
-
-
-
-
+print(output)
