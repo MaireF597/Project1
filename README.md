@@ -1,5 +1,5 @@
 # PasswordCrackerProject
-# 2023 CSHS Cybersecurity 
+2023 CSHS Cybersecurity 
 
 
 # Command Line Arguments
