@@ -1,8 +1,5 @@
 import hashlib
 def SHA256(password):
-    #Takes in a password, converts the line into byte form, converts the byte form to a SHA-256 hash
-    passSHA = hashlib.sha256(password.encode())
-    passSHA = passSHA.hexdigest()
 
     crackedPassSHA = ""
 
@@ -19,14 +16,16 @@ def SHA256(password):
             lineSHA = lineSHA.hexdigest()
 
             #checks if the sha-256 hash line from the file equals the password hash
-            if lineSHA == passSHA:
+            if lineSHA == password:
                 crackedPassSHA = line
 
     #If the program did not find the password in the text file it will return the massage 
     # "password not found"
     print("The password the user entered: " + password)
-    print ("The password as a SHA-256 hash: " + passSHA)
+ 
     if crackedPassSHA == "":
         crackedPassSHA = "Password not found"
 
     print("The password the program cracked using SHA-256 cracker: " + crackedPassSHA)
+
+#SHA256("65e84be33532fb784c48129675f9eff3a682b27168c0ea744b2cf58ee02337c5")
