@@ -38,14 +38,14 @@ def BruteForce(password):
     for c in itertools.product(strChar, repeat=len(password)):
         #Makes the password we are checking against the real password equal to c which contains
         # the current permutation of str
-        password = c
+        passwordT = c
         
-        print("Trying: "+ str( convertTuple(password)))
+        print("Trying: "+ str( convertTuple(passwordT)))
         
         #Checks to see if the password equals the real password and if it is, it's converted 
         # into a String to be output
-        if password == convertTuple(password):
-            output = convertTuple(password)
+        if password == convertTuple(passwordT):
+            output = convertTuple(passwordT)
             break
             
     #If the program did not find the password in the text file it will return an error message
@@ -53,3 +53,4 @@ def BruteForce(password):
         output = "Unable to crack password"
     
     print(output)
+
