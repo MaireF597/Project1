@@ -44,7 +44,7 @@ W3schools was used in the rest of the programs
 
 
 
-Imports:
+Imports:\
 sys\
 itertools\
 hashlib\
