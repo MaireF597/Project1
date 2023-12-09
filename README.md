@@ -44,10 +44,9 @@ W3schools was used in the rest of the programs
 
 
 Imports:
-
 sys\
 itertools\
 hashlib\
-bcrypt\
+bcrypt
 
 
