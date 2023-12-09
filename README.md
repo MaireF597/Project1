@@ -5,7 +5,7 @@
 
 ## Command Line Arguments
 
-To choose a password cracking type to run type --choice *the letter representing your choice*
+To choose a password cracking type to run type --choice *the letter representing your choice* --password *password you want to crack* (The password and choice portion are optional as the program will set a default password and password cracking mode if the user does not input arguments)
 
 
 m = MD5 Hash\

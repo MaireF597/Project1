@@ -1,7 +1,9 @@
 
 import itertools
-def BruteForce(password):
 
+def BruteForce(password):
+    output = ""
+    print("Your password is: "+password)
     #Asks the user if their password has special characters, numbers, uppercase, lowercase to cut down on cracking time. 
     #Depending on user response, the characters are added to the main string to be used while cracking the password.
     choiceS = input("Does the password contain special characters?(Y/N)\n")
@@ -13,7 +15,7 @@ def BruteForce(password):
     number = "1234567890"
     special = "`~!@#$%^&*()_-+={[}]|\:;<,>.?/"
 
-    #Determines what character strings to add to the main string for password cracking
+    #Determines what character strings to add to the main string (strChar) for password cracking
     strChar=" "
     if choiceS == "Y":
         strChar = strChar+special
@@ -33,8 +35,7 @@ def BruteForce(password):
         return str
 
     #Runs through all permutations of the characters in the main strings to crack the password
-    # Takes in the main string containing all possible characters and 
-    for c in itertools.product(strChar, repeat=len(passwordOG)):
+    for c in itertools.product(strChar, repeat=len(password)):
         #Makes the password we are checking against the real password equal to c which contains
         # the current permutation of str
         password = c
@@ -43,9 +44,12 @@ def BruteForce(password):
         
         #Checks to see if the password equals the real password and if it is, it's converted 
         # into a String to be output
-        if passwordOG == convertTuple(password):
+        if password == convertTuple(password):
             output = convertTuple(password)
             break
             
-
+    #If the program did not find the password in the text file it will return an error message
+    if (output == ""):
+        output = "Unable to crack password"
+    
     print(output)

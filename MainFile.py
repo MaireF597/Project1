@@ -12,6 +12,9 @@ parser.add_argument('--password', type=str, help='str: input a password to crack
 
 args: Namespace = parser.parse_args() #determines what the arguments are from the terminal and convert them to the appropriate type
 
+if args.choice == None:
+    args.choice = "D"
+
 if args.choice == "m":
     if(args.password == None):
         args.password = "d8578edf8458ce06fbc5bb76a58c5ca4"
@@ -25,8 +28,8 @@ elif args.choice == "D":
         args.password = "qwerty"
     DictionaryAttack(args.password)
 elif args.choice == "B":
-    if(agrs.password == None):
-        args.password = "qwerty"
+    if(args.password == None):
+        args.password = "def"
     BruteForce(args.password)
 elif args.choice == "b":
     if(args.password==None):
