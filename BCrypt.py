@@ -2,12 +2,13 @@ import bcrypt
 
 def BCrypt(password):
     crackedPassBcrypt = ""
+    print(password)
     #converts password into byte format
     passwordByte = password.encode('utf-8') 
-    
+    print(passwordByte)
 
-#runs through list of most common passwords and encodes the line in byte format then 
-# compares the password input with the password from the line of the file
+    #runs through list of most common passwords and encodes the line in byte format then 
+    # compares the password input with the password from the line of the file
     with open('commonpasswords.txt', 'r') as f:
             for line in f:
                 #strips trailing whitespaces
@@ -17,9 +18,12 @@ def BCrypt(password):
                 lineByte = line.encode('utf-8')
                 
                 #checks to see if the input password is equal to the password in the 
-                # file by using the same salt value to encode it
+                # file by using the same salt value to encode it (takes the input password 
+                # in byte format and seperates the salt from the hash and puts the line in byte 
+                # format with the salt then hashes it to check if the entered password is equal to the line)
                 value = bcrypt.checkpw(lineByte, passwordByte)
                 if (value):
+                    print(lineByte)
                     crackedPassBcrypt = line
                     break
 

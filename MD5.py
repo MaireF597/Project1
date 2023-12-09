@@ -12,7 +12,7 @@ def MD5(password):
             line = line.strip()
            #changes line to byte format
             lineMD5 = hashlib.md5(line.encode())
-            #changes the byte format to an MD5 hash
+            #changes the byte format to an MD5 hash (hexadecimal string)
             lineMD5 = lineMD5.hexdigest()
 
             #checks if the MD5 hash line from the file equals the password hash
