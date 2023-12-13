@@ -9,7 +9,7 @@ from argparse import ArgumentParser, Namespace
 #Makes parser so that custom arguments can be added
 parser = ArgumentParser()
 #Custom arguments initialized
-parser.add_argument('--choice', type=str, help='str: Choose what password cracking type you want to do: m for MD5 hash, b for BCrypt, s for SHA-256. D for Dictionary Attack, and B for Brute Force')
+parser.add_argument('--choice', type=str, help='str: Choose what password cracking type you want to do: m for MD5 hash, b for BCrypt, s for SHA-256, D for Dictionary Attack, and B for Brute Force')
 parser.add_argument('--password', type=str, help='str: input a password to crack')
 
 #Determines what the arguments are from the terminal and convert them to the appropriate type

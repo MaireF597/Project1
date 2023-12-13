@@ -2,10 +2,10 @@ import bcrypt
 
 def BCrypt(password):
     crackedPassBcrypt = ""
-    print(password)
+    #print(password)
     #converts password into byte format
     passwordByte = password.encode('utf-8') 
-    print(passwordByte)
+    #print(passwordByte)
 
     #runs through list of most common passwords and encodes the line in byte format then 
     # compares the password input with the password from the line of the file
@@ -23,7 +23,7 @@ def BCrypt(password):
                 # format with the salt then hashes it to check if the entered password is equal to the line)
                 value = bcrypt.checkpw(lineByte, passwordByte)
                 if (value):
-                    print(lineByte)
+                    #print(lineByte)
                     crackedPassBcrypt = line
                     break
 
